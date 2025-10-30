@@ -105,5 +105,13 @@ le fichier `.github/workflows/ci.yml` éxecute 2 jobs :
     Insère dans seed.js 5 types de requêtes standard:
         > `node scripts/seed.js`  
 
+## 🛡️ Branch Protection
+
+The `main` branch is protected to enforce code quality and workflow consistency.  
+Pull requests must pass all checks before merging.
+
+![Branch Protection Rules](assets/TP_git.png)
+
+
 # END
 Project successfully configured with ESLint, Prettier, Jest, and GitHub Actions.
