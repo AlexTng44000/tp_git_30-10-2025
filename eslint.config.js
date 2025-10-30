@@ -4,9 +4,11 @@ import prettierConfig from "eslint-config-prettier";
 
 export default [
     js.configs.recommended,
-    pluginImport.configs.recommended,
     prettierConfig,
     {
+        plugins: {
+            import: pluginImport,
+        },
         languageOptions: {
             ecmaVersion: "latest",
             sourceType: "module",
