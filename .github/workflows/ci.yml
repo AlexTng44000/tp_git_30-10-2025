@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  code-quality:
+    name: Code quality (ESLint + Prettier)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '18', cache: 'npm' }
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run format:check
+
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+    services:
+      mongodb:
+        image: mongo:6.0
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd "mongosh --eval 'db.runCommand({ ping: 1 })'"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 20
+    env:
+      MONGODB_URI: mongodb://127.0.0.1:27017/support_api_ci
+      NODE_ENV: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '18', cache: 'npm' }
+      - run: npm ci
+      - name: Seed DB
+        run: node scripts/seed.js
+      - name: Run tests
+        run: npm test
+      - name: Upload coverage
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: coverage
