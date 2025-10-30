@@ -12,7 +12,7 @@ Le projet inclut une intégration continue (CI) via GitHub Actions, avec vérifi
 ### 1. Cloner le dépôt
 
 ```bash
-git clone https://github.com/<ton-compte>/<ton-repo>.git
+git clone https://github.com/AlexTng44000/tp_git_30-10-2025.git
 cd support-api
 ```
 ## Installer les dépendances 
@@ -33,32 +33,32 @@ npm run dev
 > L'API tourne sur le port 3000 `http://localhost:3000`
 
 ## Structure du projet :
-support-api/
-│
-├── src/
-│   ├── config/
-│   │   └── database.js        # Connexion MongoDB
-│   ├── models/
-│   │   └── RequestType.js     # Modèle principal
-│   ├── routes/
-│   │   └── requestTypes.js    # Routes de l’API
-│   └── server.js              # Point d’entrée
-│
-├── scripts/
-│   └── seed.js                # Script d’insertion des données
-│
-├── tests/
-│   └── requestTypes.test.js   # Tests Jest + Supertest
-│
-├── .github/
-│   └── workflows/
-│       └── ci.yml             # Pipeline GitHub Actions
-│
-├── .eslintrc.js
-├── .prettierrc
-├── package.json
-├── .gitignore
-└── README.md
+support-api/  
+│  
+├── src/  
+│   ├── config/  
+│   │   └── database.js        # Connexion MongoDB  
+│   ├── models/  
+│   │   └── RequestType.js     # Modèle principal  
+│   ├── routes/  
+│   │   └── requestTypes.js    # Routes de l’API  
+│   └── server.js              # Point d’entrée  
+│  
+├── scripts/  
+│   └── seed.js                # Script d’insertion des données  
+│  
+├── tests/  
+│   └── requestTypes.test.js   # Tests Jest + Supertest  
+│  
+├── .github/  
+│   └── workflows/  
+│       └── ci.yml             # Pipeline GitHub Actions  
+│  
+├── .eslintrc.js  
+├── .prettierrc  
+├── package.json  
+├── .gitignore  
+└── README.md  
 
 ## Tests
 ```
