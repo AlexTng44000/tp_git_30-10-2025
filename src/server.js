@@ -27,5 +27,6 @@ if (process.env.NODE_ENV !== 'test') {
       process.exit(1);
     });
 }
+console.log("API ready and fully validated!");
 
 export default app; // pour tests

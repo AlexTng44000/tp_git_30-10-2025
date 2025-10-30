@@ -103,4 +103,7 @@ le fichier `.github/workflows/ci.yml` éxecute 2 jobs :
 
 4. Données dans seed :  
     Insère dans seed.js 5 types de requêtes standard:
-        > `node scripts/seed.js`
+        > `node scripts/seed.js`  
+
+# END
+Project successfully configured with ESLint, Prettier, Jest, and GitHub Actions.
